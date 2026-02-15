@@ -13,7 +13,7 @@ The goal is to explore life expectancy trends by country, gender differences, an
 
 ## Data Source
 
-- Data scraped from: *([Add website URL if you scraped from a site](https://worldpopulationreview.com/country-rankings/life-expectancy-by-country))*
+- Data scraped from: *(https://worldpopulationreview.com/country-rankings/life-expectancy-by-country)*
 - Columns included:
   - `Country`
   - `Life Expectancy UN 2024`
