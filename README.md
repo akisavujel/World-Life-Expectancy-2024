@@ -105,6 +105,6 @@ Overall, this project is suitable for **portfolio demonstration**, showcasing sk
 ## 👤 Author
 
 - **Akisha Bhujel**  
-- GitHub: [https://github.com/akisavujel](https://github.com/akisavujel)  
-- Kaggle: [https://www.kaggle.com/akisavujel](https://www.kaggle.com/akisavujel)  
-- LinkedIn: [https://www.linkedin.com/in/akisa-vujel-5437843a2/](https://www.linkedin.com/in/akisa-vujel-5437843a2/)
+- GitHub: (https://github.com/akisavujel)  
+- Kaggle: (https://www.kaggle.com/akisavujel)  
+- LinkedIn: (https://www.linkedin.com/in/akishabhujel/)
