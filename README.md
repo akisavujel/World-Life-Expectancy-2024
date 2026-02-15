@@ -58,6 +58,9 @@ The life expectancy data was scraped from [World Population Review – Life Expe
 
 This ensured a **clean, structured, and analysis-ready dataset** for the project.
 
+View Project Online:
+[🌐 World Life Expectancy 2024 Dashboard](https://www.kaggle.com/code/akisavujel/scrape-world-population)
+
 ## 🗄️ SQL Analysis
 
 Performed queries include:
