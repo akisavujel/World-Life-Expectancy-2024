@@ -1,110 +1,177 @@
+<div align="center">
+
 # 🌍 World Life Expectancy 2024 Analysis
 
-## 📖 Project Overview
+<img src="https://www.census.gov/newsroom/stories/world-population-day/_jcr_content/root/responsivegrid/responsivegrid_1749353263/imagecore.coreimg.jpeg/1752002906227/stories-world-population-2025.jpeg" width="600" height="400" style="border-radius:10px;"/>
 
-This project analyzes global life expectancy data for 2024. It includes:
+### 🌐 Web Scraping · SQL Analysis · Tableau Dashboard
 
-- 🕸️ **Web scraping** data from a source website  
-- 🧹 **Data cleaning and preprocessing** in Python  
-- 🗄️ **SQL queries** for statistical analysis  
-- 📊 **Interactive dashboard** in Tableau Public  
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com)
+[![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com)
+[![Kaggle](https://img.shields.io/badge/Kaggle-20beff?style=for-the-badge&logo=kaggle&logoColor=white)](https://kaggle.com)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
 
-The goal is to explore life expectancy trends by country, gender differences, and identify extremes (highest/lowest life expectancy).
+</div>
 
-## 🎯 Objective
+---
 
-The main objectives of this project are:
+## 📌 Overview
 
-1. 📝 Collect and clean global life expectancy data in a structured format.  
-2. 📊 Analyze life expectancy patterns using SQL queries.  
-3. 🌐 Visualize key insights using Tableau, including global distribution, gender gaps, and extremes.  
-4. 💻 Create an **interactive dashboard** suitable for portfolio demonstration or internship projects.
+This project analyzes global life expectancy data for 2024. It includes web scraping, data cleaning, SQL analysis, and an interactive Tableau dashboard — covering life expectancy trends by country and gender differences.
 
-## 🗂️ Data Source
+---
 
-- Data scraped from: [World Population Review – Life Expectancy by Country](https://worldpopulationreview.com/country-rankings/life-expectancy-by-country)  
-- Columns included:
-  - `Country`  
-  - `Life Expectancy UN 2024`  
-  - `Female Life Expectancy UN 2024`  
-  - `Male Life Expectancy UN 2024`  
+## 🎯 Objectives
+```
+01  Collect and clean global life expectancy data in a structured format
+02  Analyze life expectancy patterns using SQL queries
+03  Visualize key insights using Tableau
+04  Create an interactive dashboard for portfolio demonstration
+```
 
-## 🛠️ Technologies Used
+---
 
-- 🐍 **Python** – Web scraping, data cleaning (Pandas)  
-- 📓 **Jupyter Notebook / Google Colab** – Python environment for data processing  
-- 🖼️ **BeautifulSoup & Requests** – For scraping and parsing HTML data  
-- 🗄️ **SQL** – Querying, calculating averages, max/min, gender gap  
-- 📊 **Tableau Public** – Dashboard visualization  
-- 💾 **CSV** – Data storage  
+## 📁 Project Structure
+```
+World-Life-Expectancy-2024/
+│
+├── scrape.ipynb                      # Web scraping notebook
+├── analysis.sql                      # SQL queries
+├── world_life_expectancy_2024.png    # Dashboard preview
+├── README.md                         # Project documentation
+├── analysissql.pdf
+└── data/
+    └── life_expectancy.csv           # Cleaned dataset
+```
+
+---
+
+## 📂 Dataset
+
+| Column | Description |
+|--------|-------------|
+| `Country` | Country name |
+| `Life Expectancy UN 2024` | Overall life expectancy |
+| `Female Life Expectancy UN 2024` | Female life expectancy |
+| `Male Life Expectancy UN 2024` | Male life expectancy |
+
+> 🔗 Data scraped from: [World Population Review](https://worldpopulationreview.com/country-rankings/life-expectancy-by-country)
+
+---
+
+## 🔄 Analysis Pipeline
+```
+🕸️ Web Scraping
+   │
+   ▼
+🧹 Data Cleaning ──── Remove nulls, fix types, drop duplicates
+   │
+   ▼
+🗄️ SQL Analysis ──── Averages, max/min, gender gap, filters
+   │
+   ▼
+📊 Tableau Dashboard ── KPIs, bar charts, global map
+   │
+   ▼
+💡 Insights ──────── Business conclusions and pattern discovery
+```
+
+---
 
 ## 🧹 Data Scraping and Cleaning
 
-The life expectancy data was scraped from [World Population Review – Life Expectancy by Country](https://worldpopulationreview.com/country-rankings/life-expectancy-by-country) using Python.  
-
 **Steps performed:**
 
-1. 🕸️ **Web Scraping**  
-   - Used `requests` to fetch the webpage content.  
-   - Used `BeautifulSoup` to parse the HTML and locate the life expectancy table.  
-   - Extracted column headers and table rows programmatically.
+| Step | Description |
+|------|-------------|
+| 🕸️ Web Scraping | Used `requests` + `BeautifulSoup` to fetch and parse HTML table |
+| 🧹 Data Cleaning | Removed unwanted characters, dropped empty rows and columns |
+| 🔢 Type Conversion | Converted life expectancy columns to numeric format |
+| ✅ Validation | Checked for nulls, duplicates, and unique values |
+| 💾 Export | Saved cleaned dataset as CSV for SQL and Tableau |
 
-2. 🧹 **Data Cleaning**  
-   - Removed unwanted characters from column names.  
-   - Dropped empty or irrelevant rows and columns.  
-   - Converted life expectancy columns to numeric format.  
-   - Checked for nulls, duplicates, and unique values.  
-   - Saved the cleaned dataset as a CSV for further SQL analysis and Tableau visualization.
+> 🔗 View Project Online: [🌐 Web Data Miner](https://www.kaggle.com/code/akisavujel/scrape-world-population)
 
-This ensured a **clean, structured, and analysis-ready dataset** for the project.
-
-View Project Online:
-[🌐 Web Data Miner](https://www.kaggle.com/code/akisavujel/scrape-world-population)
+---
 
 ## 🗄️ SQL Analysis
 
-Performed queries include:
+| Query | Description |
+|-------|-------------|
+| 📊 Average Life Expectancy | Overall, male, and female averages |
+| 🏆 Highest & Lowest | Countries with best and worst life expectancy |
+| ⚠️ Threshold Filter | Countries with life expectancy >80 or <60 |
+| 👩‍🦰👨 Gender Gap | Average difference between male and female life expectancy |
+| 🔢 Range | Difference between highest and lowest countries |
 
-- 📊 Average life expectancy (overall, male, female)  
-- 🏆 Highest and lowest life expectancy countries  
-- ⚠️ Countries with life expectancy >80 or <60  
-- 👩‍🦰👨 Average gender life expectancy gap  
-- 🔢 Life expectancy difference between highest and lowest countries  
+---
 
 ## 📊 Tableau Dashboard
 
-Features:
+**5 KPIs:**
+- Life Expectancy Difference (Max – Min)
+- Average Life Expectancy
+- Average Male Life Expectancy
+- Average Female Life Expectancy
+- Average Gender Life Expectancy Gap
 
-- **5 KPIs**:
-  - Life Expectancy Difference (Max – Min)  
-  - Average Life Expectancy  
-  - Average Male Life Expectancy  
-  - Average Female Life Expectancy  
-  - Average Gender Life Expectancy Gap  
-- **4 Bar Charts**: Top 10 highest, Top 10 lowest, >80, <60  
-- **1 Map**: Global life expectancy by country  
-- Interactive hover tooltips  
-- Clean layout with KPI separators  
+**4 Bar Charts:** Top 10 highest · Top 10 lowest · >80 · <60
 
-**View Dashboard Online:**  
-[🌐 World Life Expectancy 2024 Dashboard](https://public.tableau.com/app/profile/akisha.bhujel/viz/meow_17711361164730/Dashboard1)
+**1 Map:** Global life expectancy by country
 
-**Static Preview:**  
+> 🔗 **View Dashboard:** [🌐 World Life Expectancy 2024 Dashboard](https://public.tableau.com/app/profile/akisha.bhujel/viz/meow_17711361164730/Dashboard1)
+
+**Dashboard Preview:**
+
 ![Dashboard Preview](https://github.com/akisavujel/World-Life-Expectancy-2024/blob/76ff9040ded3d5e5ea556faa9c186c3af7b07928/world_life_expectancy_2024.png)
 
-## 🏁 Conclusion
+---
 
-This project demonstrates the **complete data workflow** from **web scraping**, **data cleaning**, **SQL analysis**, to **interactive visualization** in Tableau. Key insights include:
+## 💡 Key Insights
 
-- 🏆 Identification of countries with the **highest and lowest life expectancy**  
-- 👩‍🦰👨 Understanding of **gender differences** in life expectancy  
-- 🌐 Ability to **filter and interact** with data in Tableau to explore trends dynamically  
+| # | Insight |
+|---|---------|
+| 01 | 🏆 Clear identification of countries with **highest and lowest** life expectancy |
+| 02 | 👩‍🦰👨 Significant **gender differences** in life expectancy across regions |
+| 03 | 🌐 Interactive Tableau dashboard allows **dynamic filtering** of trends |
+| 04 | ⚠️ Several countries still fall **below 60 years** of life expectancy |
+| 05 | 📊 Global average life expectancy shows clear **regional patterns** |
 
-Overall, this project is suitable for **portfolio demonstration**, showcasing skills in **Python, SQL, and Tableau**, and highlights capabilities relevant for a **data analyst internship**.
+---
+
+## ✅ Conclusion
+
+This project demonstrates the **complete data workflow** from web scraping, data cleaning, SQL analysis, to interactive visualization in Tableau. Key insights include identification of countries with the highest and lowest life expectancy, understanding of gender differences, and the ability to filter and interact with data dynamically.
+
+> Overall, this project is suitable for **portfolio demonstration**, showcasing skills in **Python, SQL, and Tableau**, and highlights capabilities relevant for a **data analyst internship**.
+
+---
 
 ## 👤 Author
 
-- **Akisha Bhujel**  
-- GitHub: https://github.com/akisavujel  
-- Kaggle: https://www.kaggle.com/akisavujel
-- LinkedIn: https://www.linkedin.com/in/akishabhujel/
+<div align="center">
+
+**Akisha Bhujel** 
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akisavujel)
+[![Kaggle](https://img.shields.io/badge/Kaggle-20beff?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/akisavujel)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/akishabhujel/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white)](https://akisavujel.github.io/Portfolio/)
+[![Hashnode](https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://hashnode.com/@akisavujel)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/akishabhujel/)
+
+</div>
+
+---
+
+<div align="center">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTZreDdlNDNnbHVwZjJxejNuYTNxcnF2dGhxbDF6bGU3OXdxbTd1ciZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/tFqKgC5KSoZRm/giphy.gif" width="300"/>
+</div>
+
+---
+
+<div align="center">
+<sub>⭐ If this project helped you, consider giving it a star!</sub>
+</div>
